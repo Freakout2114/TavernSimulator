@@ -4,7 +4,8 @@
   "description": "A simulator for running a DnD tavern.",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deployCommands": "node deploy-commands.js"
   },
   "repository": {
     "type": "git",
