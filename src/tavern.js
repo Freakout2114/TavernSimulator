@@ -1,7 +1,9 @@
+const fs = require('fs');
+const path = require('node:path');
 const Currency = require('../util/currency.js');
 module.exports = function() {
 
-    this.valuation = 1;
+    this.valuation = 0;
     this.employeeCount = 8;
 
     this.getOverview = function(revenueObj) {
@@ -17,10 +19,14 @@ module.exports = function() {
             `**Breakdown**\n` +
             `Base Profit: ${baseProfit.toString()}\n` +
             `Employee Wages: -${employeeWages.toString()}\n` +
-            `Upgrade Bonuses: ${upgrades.toString()}`;
+            `Upgrade Bonuses: ${upgrades.toString()}\n` +
+            `\n` +
+            `Tavern Quality: ${this.getQuality()} (Valuation: ${this.valuation})`;
     }
 
     this.calculateRevenue = function() {
+        this.calculateValuation();
+
         const expectedCost = this.getExpectedCostPerTenday();
         const profitPercentage = (Math.random() * 38 - 8) / 100.0; // Range from -8% to +30%
 
@@ -39,7 +45,7 @@ module.exports = function() {
 
         const baseProfit = expectedCost.mult(profitPercentage);
         const employeeWages = employeeWage.mult(employeeCount);
-        const upgrades = new Currency();
+        const upgrades = new Currency().gold(this.calculateUpgradeRevenue());
 
         const profit = new Currency().copper(baseProfit.value() - employeeWages.value() + upgrades.value());
 
@@ -49,7 +55,42 @@ module.exports = function() {
             upgrades,
             profit
         };
+    }
 
+    this.calculateValuation = function() {
+        const purchasedUpgrades = this.getPurchasedUpgrades();
+        let valuation = 0;
+
+        for (let upgrade of purchasedUpgrades) {
+            valuation += upgrade.valuation[upgrade.purchased];
+        }
+        this.valuation = valuation;
+        return valuation;
+    }
+
+    this.calculateUpgradeRevenue = function() {
+        const purchasedUpgrades = this.getPurchasedUpgrades();
+        let revenue = 0;
+
+        for (let upgrade of purchasedUpgrades) {
+            if (upgrade.revenue !== null) {
+                revenue += upgrade.revenue;
+            }
+        }
+        return revenue;
+    }
+
+    this.getUpgrades = function() {
+        const upgradesPath = path.join(__dirname, '..', 'upgrades.json');
+        const rawdata = fs.readFileSync(upgradesPath);
+        const upgrades = JSON.parse(rawdata);
+
+        return Object.values(upgrades);
+    }
+
+    this.getPurchasedUpgrades = function() {
+        const upgrades = this.getUpgrades();
+        return upgrades.filter(upgrade => upgrade.purchased !== null);
     }
 
     this.getQuality = function() {
