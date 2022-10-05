@@ -12,7 +12,7 @@
       "title": "Cobbled Street(s)",
       "description": "Well-laid streets allow heavy carts to travel even during rain or snow, saving overhead costs and increasing clientele. They also increase the overall quality and appearance of the neighbourhood.",
       "cost": [200, 300],
-      "valuation": [null, null],
+      "valuation": [0, 0],
       "benefit": "Increases revenue 10 gp per tenday. Upgraded cobbled streets grant advantage once a day on Persuasion checks to neighbors.",
       "revenue": 10,
       "purchased": 0
@@ -37,7 +37,7 @@
     },
     "FightingPit": {
       "title": "Fighting Pit",
-      "description": "Tucked away from the taproom in a repurposed cellar, a secret fighting pit allows patrons to taste the thrill of the fight–or of the betting pool.",
+      "description": "Tucked away from the taproom in a repurposed cellar, a secret fighting pit allows patrons to taste the thrill of the fight-or of the betting pool.",
       "cost": [30, 40, 50],
       "valuation": [-1, 0, 1],
       "benefit": "Alters valuation -1 / +0 / +1. Grants bonus of +1 / +2 / +2 on attack rolls made in the pit. The highest tier fighting pit also gives Advantage on the Unarmed Strike check when resolving the Money-Making (Pit Fighting) downtime activity if on location.",
