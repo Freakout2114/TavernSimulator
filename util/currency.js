@@ -87,12 +87,12 @@ module.exports = function() {
         const copper = Math.floor(currentCopper);
 
         let output = [];
-        if (platinum > 0) output.push(platinum+"PP");
-        if (gold > 0) output.push(gold+"GP");
-        if (silver > 0) output.push(silver+"SP");
-        if (copper > 0) output.push(copper+"CP");
+        if (platinum > 0) output.push(platinum+"pp");
+        if (gold > 0) output.push(gold+"gp");
+        if (silver > 0) output.push(silver+"sp");
+        if (copper > 0) output.push(copper+"cp");
 
-        if (output.length === 0) output.push("0CP");
+        if (output.length === 0) output.push("0cp");
 
         return output.join(' ');
     }
