@@ -11,13 +11,14 @@ module.exports = function() {
             baseProfit,
             employeeWages,
             upgrades,
-            profit
+            profit,
+            tavernPerformance
         } = revenueObj;
 
         return `**Revenue**: ${profit.toString()}\n` +
             `\n` +
             `**Breakdown**\n` +
-            `Base Profit: ${baseProfit.toString()}\n` +
+            `Base Profit: ${baseProfit.toString()} | ${tavernPerformance} week\n` +
             `Employee Wages: -${employeeWages.toString()}\n` +
             `Upgrade Bonuses: ${upgrades.toString()}\n` +
             `\n` +
@@ -28,7 +29,9 @@ module.exports = function() {
         this.calculateValuation();
 
         const expectedCost = this.getExpectedCostPerTenday();
-        const profitPercentage = (Math.random() * 38 - 8) / 100.0; // Range from -8% to +30%
+        const percentage = Math.random();
+        const profitPercentage = (percentage * 38 - 8) / 100.0; // Range from -8% to +30%
+        const tavernPerformance = this.getTavernPerformance(percentage)
 
         // Costs include N workers, where N = Expected Cost / 10 (round up). Non-living staff can count as 2 workers.
         const employeeCount = this.employeeCount;
@@ -53,7 +56,8 @@ module.exports = function() {
             baseProfit,
             employeeWages,
             upgrades,
-            profit
+            profit,
+            tavernPerformance
         };
     }
 
@@ -101,13 +105,31 @@ module.exports = function() {
             return 'Poor';
         } else if (valuation <= 19) {
             return 'Modest';
-        } else if (valuation <= 30) {
+        } else if (valuation <= 49) {
             return 'Confortable';
-        } else if (valuation <= 44) {
-            return 'Upscale';
+        } else if (valuation <= 69) {
+            return 'Wealthy';
         } else {
             return 'Aristocratic';
         }
+    }
+
+    this.getTavernPerformance = function(percentage) {
+        const tavernPerformance = [
+            'Ghost Town',
+            'Empty',
+            'Slow',
+            'Quiet',
+            'Busy',
+            'Normal',
+            'Packed',
+            'Flooded',
+            'Full-on',
+            'Bustling',
+            'Chaotic'
+        ];
+
+        return tavernPerformance[Math.floor(tavernPerformance.length * percentage)];
     }
 
     /**

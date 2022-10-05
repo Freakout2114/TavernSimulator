@@ -4,7 +4,7 @@
       "description": "Want to provide a calming, ethereal display for your patrons or bring a little nature indoors? Just add water! And fish.",
       "cost": [10, 30, 50],
       "valuation": [1, 3, 5],
-      "benefit": "Benefit: Increases valuation +1 / +3 / +5.",
+      "benefit": "",
       "revenue": null,
       "purchased": null
     },
@@ -13,7 +13,7 @@
       "description": "Well-laid streets allow heavy carts to travel even during rain or snow, saving overhead costs and increasing clientele. They also increase the overall quality and appearance of the neighbourhood.",
       "cost": [200, 300],
       "valuation": [null, null],
-      "benefit": "Benefit: Increases revenue 10 gp per tenday. Upgraded cobbled streets grant advantage once a day on Persuasion checks to neighbors.",
+      "benefit": "Increases revenue 10 gp per tenday. Upgraded cobbled streets grant advantage once a day on Persuasion checks to neighbors.",
       "revenue": 10,
       "purchased": 0
     },
@@ -22,7 +22,7 @@
       "description": "A dwarven-invented mechanical apparatus that propels cask ale from the cellars to hand pumps at the bar, allowing taverns to serve customers at greater speed.",
       "cost": [40, 60, 80],
       "valuation": [4, 6, 8],
-      "benefit": "Benefit: Increases valuation +4 / +6 / +8. At luxury tier, also increases revenue 1gp per tenday.",
+      "benefit": "At luxury tier, also increases revenue 1gp per tenday.",
       "revenue": 1,
       "purchased": null
     },
@@ -31,7 +31,7 @@
       "description": "Outside seating allows customers to escape the smoke and grime of the tavern interior. It also raises the respectability of your establishment.",
       "cost": [20, 40, 100],
       "valuation": [2, 4, 6],
-      "benefit": "Benefit: Increases valuation +2 / +4 / +6. Grants bonus of +1 / +2 / +2 on Persuasion checks made in the garden. The luxury tier beer garden also allows you to roll an additional 1d4 and drop the lowest when resolving the Carousing downtime activity if on location.",
+      "benefit": "Grants bonus of +1 / +2 / +2 on Persuasion checks made in the garden. The luxury tier beer garden also allows you to roll an additional 1d4 and drop the lowest when resolving the Carousing downtime activity if on location.",
       "revenue": null,
       "purchased": null
     },
@@ -40,7 +40,7 @@
       "description": "Tucked away from the taproom in a repurposed cellar, a secret fighting pit allows patrons to taste the thrill of the fight–or of the betting pool.",
       "cost": [30, 40, 50],
       "valuation": [-1, 0, 1],
-      "benefit": "Benefit: Alters valuation -1 / +0 / +1. Grants bonus of +1 / +2 / +2 on attack rolls made in the pit. The highest tier fighting pit also gives Advantage on the Unarmed Strike check when resolving the Money-Making (Pit Fighting) downtime activity if on location.",
+      "benefit": "Alters valuation -1 / +0 / +1. Grants bonus of +1 / +2 / +2 on attack rolls made in the pit. The highest tier fighting pit also gives Advantage on the Unarmed Strike check when resolving the Money-Making (Pit Fighting) downtime activity if on location.",
       "revenue": null,
       "purchased": null
     },
@@ -49,7 +49,7 @@
       "description": "Late at night, unbeknownst to the City Watch, in a secret corner (or snug), the dice roll and prayers are muttered to Tymora, the Lady of Luck.",
       "cost": [10, 30, 90],
       "valuation": [1, 3, 5],
-      "benefit": "Benefit: Increases valuation +1 / +3 / +5. Grants bonus of +1 / +2 / +2 on Insight checks made at the table. The luxury tier gambling table also gives Advantage on the Insight check when resolving the Money-Making (Gambling) downtime activity if on location.",
+      "benefit": "Grants bonus of +1 / +2 / +2 on Insight checks made at the table. The luxury tier gambling table also gives Advantage on the Insight check when resolving the Money-Making (Gambling) downtime activity if on location.",
       "revenue": null,
       "purchased": null
     },
@@ -58,7 +58,7 @@
       "description": "Most taverns make do with an outhouse or chamber pot for patrons; building a lavatory indoors will make customers feel pampered and more likely to stay for another round.",
       "cost": [20, 40, 60],
       "valuation": [2, 4, 6],
-      "benefit": "Benefit: Increases valuation +2 / +4 / +6.",
+      "benefit": "",
       "revenue": null,
       "purchased": null
     },
@@ -67,7 +67,7 @@
       "description": "A room with frosted glass protects the privacy of those who would pay a little extra to be drink away from prying eyes.",
       "cost": [20, 40, 100],
       "valuation": [2, 4, 6],
-      "benefit": "Benefit: Increases valuation +2 / +4 / +6. Grants bonus of +1 / +2 / +2 on Deception checks made in the snug. The luxury tier snug also allows you to roll an additional 1d4 and drop the lowest when resolving the Spreading Rumors downtime activity if on location.",
+      "benefit": "Grants bonus of +1 / +2 / +2 on Deception checks made in the snug. The luxury tier snug also allows you to roll an additional 1d4 and drop the lowest when resolving the Spreading Rumors downtime activity if on location.",
       "revenue": null,
       "purchased": null
     },
@@ -76,53 +76,53 @@
       "description": "A raised platform gives a natural place for bards, actors, or tipsy amateur poets to perform and entertain tavern patrons.",
       "cost": [10, 30, 90],
       "valuation": [1, 3, 5],
-      "benefit": "Benefit: Increases valuation +1 / +3 / +5. Grants bonus of +1 / +2 / +2 on Performance checks made on the stage. The luxury tier stage also gives Advantage on the Performance check when resolving the Money-Making (Performing) downtime activity if on location.",
+      "benefit": "Grants bonus of +1 / +2 / +2 on Performance checks made on the stage. The luxury tier stage also gives Advantage on the Performance check when resolving the Money-Making (Performing) downtime activity if on location.",
       "revenue": null,
       "purchased": 2
     },
     "UpgradedCellar": {
       "title": "Upgraded Cellar",
       "description": "A stone-lined cellar allows the tavern to stockpile wines and spirits at temperature and hold reserves of ale inside giant storage barrels.",
-      "cost": [null, 20, 60],
+      "cost": [0, 20, 60],
       "valuation": [1, 3, 5],
-      "benefit": "Benefit: Increases valuation +1 / +3 / +5. At luxury tier, also increases revenue 1gp per tenday.",
+      "benefit": "At luxury tier, also increases revenue 1gp per tenday.",
       "revenue": 1,
-      "purchased": null
+      "purchased": 0
     },
     "UpgradedHearth": {
       "title": "Upgraded Hearth",
       "description": "The center of any room is the hearth, and a taproom is no exception. An upgraded hearth elevates the atmosphere (and the temperature, on cold nights).",
-      "cost": [null, 20, 60],
+      "cost": [0, 20, 60],
       "valuation": [1, 3, 5],
-      "benefit": "Benefit: Increases valuation +1 / +3 / +5. At luxury tier, also increases revenue 1gp per tenday.",
+      "benefit": "At luxury tier, also increases revenue 1gp per tenday.",
       "revenue": 1,
-      "purchased": null
+      "purchased": 0
     },
     "UpgradedKitchen": {
       "title": "Upgraded Kitchen",
       "description": "Providing food is the very first step to better service; an upgraded kitchen comes with more room for more cooking techniques and faster service.",
-      "cost": [null, 20, 60],
+      "cost": [0, 20, 60],
       "valuation": [1, 3, 5],
-      "benefit": "Benefit: Increases valuation +1 / +3 / +5. At luxury tier, also increases revenue 1gp per tenday.",
+      "benefit": "At luxury tier, also increases revenue 1gp per tenday.",
       "revenue": 1,
-      "purchased": null
+      "purchased": 0
     },
     "UpgradedLarder": {
       "title": "Upgraded Larder",
       "description": "A storage area for wholefood supplies with a cool room for perishables. The fresher the ingredients, the better the meal!",
-      "cost": [null, 20, 60],
+      "cost": [0, 20, 60],
       "valuation": [1, 3, 5],
-      "benefit": "Benefit: Increases valuation +1 / +3 / +5. At luxury tier, also increases revenue 1gp per tenday.",
+      "benefit": "At luxury tier, also increases revenue 1gp per tenday.",
       "revenue": 1,
-      "purchased": null
+      "purchased": 0
     },
     "UpgradedTaproom": {
       "title": "Upgraded Taproom",
       "description": "The taproom is the heart of your tavern. A basic taproom has spit-and-sawdust floors, worn tables, and cracked mugs; a a luxury-level taproom would have polished floors and crystal.",
-      "cost": [null, 20, 60],
+      "cost": [0, 20, 60],
       "valuation": [1, 3, 5],
-      "benefit": "Benefit: Increases valuation +1 / +3 / +5. At luxury tier, also increases revenue 1gp per tenday.",
+      "benefit": "At luxury tier, also increases revenue 1gp per tenday.",
       "revenue": 1,
-      "purchased": null
+      "purchased": 0
     }
 }
