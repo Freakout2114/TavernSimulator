@@ -6,22 +6,22 @@
  * new Currency().copper(60).fromMonthly().toWeekly().value();
  */
 module.exports = function() {
-    this.copper = 0;
+    this.unit = 0;
 
     this.copper = function(amount) {
-        this.copper = amount;
+        this.unit = amount;
         return this;
     }
     this.silver = function(amount) {
-        this.copper = amount * 10;
+        this.unit = amount * 10;
         return this;
     }
     this.gold = function(amount) {
-        this.copper = amount * 100;
+        this.unit = amount * 100;
         return this;
     }
     this.platinum = function(amount) {
-        this.copper = amount * 1000;
+        this.unit = amount * 1000;
         return this;
     }
 
@@ -29,11 +29,11 @@ module.exports = function() {
         return this;
     }
     this.fromWeekly = function() {
-        this.copper /= 10; // 10 days in a week.
+        this.unit /= 10; // 10 days in a week.
         return this;
     }
     this.fromMonthly = function() {
-        this.copper /= 30; // 30 days in a month
+        this.unit /= 30; // 30 days in a month
         return this;
     }
 
@@ -41,11 +41,11 @@ module.exports = function() {
         return this;
     }
     this.toWeekly = function() {
-        this.copper *= 10;
+        this.unit *= 10;
         return this;
     }
     this.toMonthly = function() {
-        this.copper *= 30;
+        this.unit *= 30;
         return this;
     }
 
@@ -53,19 +53,47 @@ module.exports = function() {
         return this;
     }
     this.toSilver = function() {
-        this.copper *= 10;
+        this.unit /= 10;
         return this;
     }
     this.toGold = function() {
-        this.copper *= 100;
+        this.unit /= 100;
         return this;
     }
     this.toPlatinum = function() {
-        this.copper *= 1000;
+        this.unit /= 1000;
         return this;
     }
 
     this.value = function() {
-        return this.copper;
+        return this.unit;
+    }
+
+    this.mult = function(val) {
+        this.unit *= val;
+        return this;
+    }
+
+    this.div = function(val) {
+        this.unit /= val;
+        return this;
+    }
+
+    this.toString = function() {
+        let currentCopper = this.unit;
+        const platinum = Math.floor(currentCopper / 1000); currentCopper -= platinum * 1000;
+        const gold = Math.floor(currentCopper / 100); currentCopper -= gold * 100;
+        const silver = Math.floor(currentCopper / 10); currentCopper -= silver * 10;
+        const copper = Math.floor(currentCopper);
+
+        let output = [];
+        if (platinum > 0) output.push(platinum+"PP");
+        if (gold > 0) output.push(gold+"GP");
+        if (silver > 0) output.push(silver+"SP");
+        if (copper > 0) output.push(copper+"CP");
+
+        if (output.length === 0) output.push("0CP");
+
+        return output.join(' ');
     }
 }
