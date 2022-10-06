@@ -1,4 +1,119 @@
 {
+    "CraftingBench": {
+      "title": "Crafting Bench",
+      "description": "A workspace occupying a 5x5 square allows characters to craft items more easily. This does not replace the artisans' tools necessary for specific crafting projects.",
+      "cost": [50],
+      "valuation": [0],
+      "benefit": "Items cost 5 gp less to craft in downtime.",
+      "revenue": null,
+      "purchased": null
+    },
+    "FurnishingsandDecor": {
+      "title": "Furnishings and Decor",
+      "description": "Make your house a home with softer beds, more comfortable sofas, a washbasin in every bedroom, or even a small fire elemental heating your bath.",
+      "cost": [200, 400, 1000],
+      "valuation": [0, 0, 0],
+      "benefit": "Taking a Long Rest in the manor provides 2/4/10 temporary HP.",
+      "revenue": null,
+      "purchased": null
+    },
+    "Library": {
+      "title": "Library",
+      "description": "Tomes of many subjects line the walls of a cozy room built for those who thirst for knowledge (or who enjoy a little light reading).",
+      "cost": [60, 100],
+      "valuation": [0, 0],
+      "benefit": "Characters gain Advantage on Intelligence checks made in the library. The upgraded library also allows you to roll an additional 1d4 and drop the lowest when resolving the Research downtime activity.",
+      "revenue": null,
+      "purchased": null
+    },
+    "ArcaneLibrary": {
+      "title": "Arcane Library",
+      "description": "In addition to the Basic or Upgraded Library, Distinguish your library with additional volumes of rare books of and about magic, which are most valuable to any arcane spellcaster.",
+      "cost": [300],
+      "valuation": [0],
+      "benefit": "In addition to the benefit(s) above, once a day, one arcane caster may cast one spell of their class (no higher than 3rd level) as a ritual. Spells above the spellcaster's level require a check with DC 10 + spellcasting modifier.",
+      "revenue": null,
+      "purchased": null
+    },
+    "PigeonLoft": {
+      "title": "Pigeon Loft",
+      "description": "Not just pets, but helpers! A well-kept pigeon loft is erected on the rooftop, with trained pigeons who always come home.",
+      "cost": [200],
+      "valuation": [0],
+      "benefit": "Once a day, you may send a message to a designated partner location or send a pigeon home.",
+      "revenue": null,
+      "purchased": null
+    },
+    "RoofGarden": {
+      "title": "Roof Garden",
+      "description": "A beautiful roof garden, full of flowers, herbs, and benches where you can sit and watch the colorful birds and butterflies that visit.",
+      "cost": [200],
+      "valuation": [0],
+      "benefit": "The garden gives a free source of herbs for medicine, cooking, potions, and poisons. Potions cost 5gp less to brew in downtime.",
+      "revenue": null,
+      "purchased": null
+    },
+    "ScribingDesk": {
+      "title": "Scribing Desk",
+      "description": "A fine desk occupying a 5x5 square - perhaps in a library? - allows characters to scribe spellscrolls more easily.",
+      "cost": [50],
+      "valuation": [0],
+      "benefit": "Spell scrolls cost 5gp less to scribe in downtime.",
+      "revenue": null,
+      "purchased": null
+    },
+    "Shrine": {
+      "title": "Shrine",
+      "description": "A room, corner, small building, or tree dedicated to the worship of a deity of your choice who will receive praise and possibly answer prayers.",
+      "cost": [60, 100],
+      "valuation": [0, 0],
+      "benefit": "A Long Rest in the manor charges a Token of Favor, allowing one player to reroll a 1 on d20 check, as long as the action does not conflict with the deity's dogma. The upgraded shrine also allows you to roll an additional 1d4 and drop the lowest when resolving the Service downtime activity.",
+      "revenue": null,
+      "purchased": null
+    },
+    "ConsecratedShrine": {
+      "title": "Consecrated Shrine",
+      "description": "In addition to Basic or Upgraded Shrine, A donation to the god's temple is rewarded with a consecration ceremony that allows a devotee to strengthen their bond with the god.",
+      "cost": [300],
+      "valuation": [0],
+      "benefit": "In addition to the benefit(s) above, once a day, one divine caster may cast one spell of their class (no higher than 3rd level) as a ritual. Spells above the spellcaster's level require a check with DC 10 + spellcasting modifier.",
+      "revenue": null,
+      "purchased": null
+    },
+    "SecretExit": {
+      "title": "Secret Exit",
+      "description": "A hidden tunnel behind the bar. A door masked by a wardrobe. Voila! Handy for making quick escapes.",
+      "cost": [10, 20, 70],
+      "valuation": [0, 0, 0],
+      "benefit": "The doorway requires prior knowledge or a DC 10/15/20 to discover. High-quality exits also grant advantage on the Stealth check required by the Theft downtime activity.",
+      "revenue": null,
+      "purchased": null
+    },
+    "SecurityEnhancements": {
+      "title": "Security Enhancements",
+      "description": "Reinforced shutters and doors protect the structure from outside threats. For a little extra, your floorboards chirp like birds when even the stealthiest of intruders steps on them.",
+      "cost": [50, 100],
+      "valuation": [0, 0],
+      "benefit": "Players gain full cover if attacked from outside. For upgraded enhancements, install up to 10 5x5 squares of flooring which alerts anyone on the same floor to movement.",
+      "revenue": null,
+      "purchased": null
+    },
+    "MagicalSecurity": {
+      "title": "Magical Security",
+      "description": "A spellcaster will enchant a door or window to raise the alarm in the form of a mental ping or a loud ringing bell in the event of intruders.",
+      "cost": [500],
+      "benefit": "A selected door or window is equipped with the Alarm spell for the duration.",
+      "revenue": null,
+      "purchased": null
+    },
+    "Vault": {
+      "title": "Vault",
+      "description": "A secure, fortified space, complete with traps and a sturdy dwarf-made door. Perfect for storing treasures and income.",
+      "cost": [100, 200],
+      "benefit": "Your vaulted space is equipped with a DC 18/23 lock and 1/2 setback trap(s). The upgraded vault also has 1 dangerous trap (as outlined in the Basic Rules).",
+      "revenue": null,
+      "purchased": null
+    },
     "Aquarium": {
       "title": "Aquarium",
       "description": "Want to provide a calming, ethereal display for your patrons or bring a little nature indoors? Just add water! And fish.",
