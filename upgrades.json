@@ -102,6 +102,7 @@
       "title": "Magical Security",
       "description": "A spellcaster will enchant a door or window to raise the alarm in the form of a mental ping or a loud ringing bell in the event of intruders.",
       "cost": [500],
+      "valuation": [0],
       "benefit": "A selected door or window is equipped with the Alarm spell for the duration.",
       "revenue": null,
       "purchased": null
@@ -110,6 +111,7 @@
       "title": "Vault",
       "description": "A secure, fortified space, complete with traps and a sturdy dwarf-made door. Perfect for storing treasures and income.",
       "cost": [100, 200],
+      "valuation": [0, 0],
       "benefit": "Your vaulted space is equipped with a DC 18/23 lock and 1/2 setback trap(s). The upgraded vault also has 1 dangerous trap (as outlined in the Basic Rules).",
       "revenue": null,
       "purchased": null
