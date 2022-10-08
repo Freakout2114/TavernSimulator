@@ -23,7 +23,10 @@ const sendMessages = async function(interaction, upgrades = []) {
 
     for (let upgrade of upgrades) {
         const cost = upgrade.cost.map(val => `${val}gp`).join(', ');
-        const valuation = upgrade.valuation.map(val => `+${val}`).join(', ');
+        const valuation = upgrade.valuation.map(val => {
+            if (val >= 0) return `+${val}`;
+            return val;
+        }).join(', ');
         const benefit = (upgrade.benefit.length > 0) ? `\n**Benefit:** ${upgrade.benefit}` : '';
         const purchasedLevel = (upgrade.purchased !== null) ? `\n**Purchased**: Level ${upgrade.purchased+1}` : '';
         outputMessages.push(
