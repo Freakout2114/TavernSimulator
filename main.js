@@ -18,7 +18,6 @@ for (const file of commandFiles) {
 	client.commands.set(command.data.name, command);
 }
 
-
 client.once('ready', () => {
     console.log('Tavern Simulator is online!');
 });
@@ -39,3 +38,20 @@ client.on('interactionCreate', async interaction => {
 });
 
 client.login(token);
+
+// --- Other stuff ---
+
+// Change the Math.random function to use a seed
+function mulberry32(a) {
+    return function() {
+      var t = a += 0x6D2B79F5;
+      t = Math.imul(t ^ t >>> 15, t | 1);
+      t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    }
+}
+// The seed is the current date e.g. yyyymmdd
+const seed = new Date().toISOString()
+	.split('T')[0]
+	.replace('-','');
+Math.random = mulberry32(seed);
