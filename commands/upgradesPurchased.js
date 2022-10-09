@@ -1,18 +1,10 @@
-const fs = require('fs');
-const path = require('node:path');
 const messageReply = require('../util/messageReply.js');
+const jsonLoader = require('../util/jsonLoader.js');
 const { SlashCommandBuilder } = require('discord.js');
 
-const getUpgrades = function() {
-    const upgradesPath = path.join(__dirname, '..', 'upgrades.json');
-    const rawdata = fs.readFileSync(upgradesPath);
-    const upgrades = JSON.parse(rawdata);
-
-    return Object.values(upgrades);
-}
-
 const getPurchasedUpgrades = function() {
-    const upgrades = getUpgrades();
+    const upgradesObj = jsonLoader('../upgrades.json');
+    const upgrades = Object.values(upgradesObj);
     return upgrades.filter(upgrade => upgrade.purchased !== null);
 }
 
