@@ -3,9 +3,7 @@ const Tavern = require('../src/tavern.js');
 
 const calculate = function() {
     const tavern = new Tavern();
-    const revenueObj = tavern.calculateRevenue();
-    const overview = tavern.getOverview(revenueObj);
-    return overview;
+    return tavern.simulate();
 }
 
  module.exports = {
