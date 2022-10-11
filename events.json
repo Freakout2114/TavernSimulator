@@ -1,0 +1,514 @@
+{
+    "0": {
+        "description": "A group of mimes enters your tavern and spends a few evenings entertaining the patrons. Take a -10 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -10,
+        "cost": null
+    },
+    "1": {
+        "description": "The Sailors' Benevolent Fund holds their annual drinking contest at your tavern. Gain a +20 bonus to your next roll on the Business Results table (+30 if you paid for extra service).",
+        "businessRollModifier": 20,
+        "cost": null
+    },
+    "2": {
+        "description": "A group of temperance preachers forms a picket outside your establishment. Take a -5 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -5,
+        "cost": null
+    },
+    "3": {
+        "description": "The council imposes a special fee on all local businesses to improve the street. Pay 1d6 * 10 gp.",
+        "businessRollModifier": null,
+        "cost": "1d6 * 10"
+    },
+    "4": {
+        "description": "Termites are found in your building. Pay 1d10 * 10 gp for repairs unless you're paying for preventative maintenance.",
+        "businessRollModifier": null,
+        "cost": "1d10 * 10"
+    },
+    "5": {
+        "description": "A magistrate selects your tavern as the venue for an inquest into the death of a local celebrity, which attracts large crowds. Gain a +15 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 15,
+        "cost": null
+    },
+    "6": {
+        "description": "A wizard on horseback sprays your tavern with magic missiles in a seemingly random attack. Patrons stay away for a few days. Take a -10 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -10,
+        "cost": null
+    },
+    "7": {
+        "description": "A friendly \"toast and roast\" event turns into a tavern brawl. Pay 1d4 * 5 gp for repairs. Ignore this result if you're paying for extra security.",
+        "businessRollModifier": null,
+        "cost": "1d4 * 5"
+    },
+    "8": {
+        "description": "A new tavern opens nearby and takes some of your patrons. Take a -10 penalty to all future rolls on the Business Results table until the rival tavern ceases trading.",
+        "businessRollModifier": -10,
+        "cost": null,
+        "onGoing": true
+    },
+    "9": {
+        "description": "A meeting of the local Debating Society is held in your tavern, attracting much public interest. Gain a +10 bonus to your next roll on the Business Results table (+15 if you paid for extra service).",
+        "businessRollModifier": 10,
+        "cost": null
+    },
+    "10": {
+        "description": "Local criminals start using your tavern as a hangout. They refuse to pay for their drinks and scare off other patrons. Take a -10 penalty to all future rolls on the Business Results table until the thugs are dealt with. Ignore this result if you're paying for extra security.",
+        "businessRollModifier": -10,
+        "cost": null,
+        "onGoing": true
+    },
+    "11": {
+        "description": "Someone offers to buy your tavern for 2d4 * 400 gp.",
+        "businessRollModifier": null,
+        "cost": null
+    },
+    "12": {
+        "description": "A fire breaks out one night after closing. Pay 1d10 * 20 gp for repairs unless you have insurance.",
+        "businessRollModifier": null,
+        "cost": "1d10 * 20"
+    },
+    "13": {
+        "description": "A public meeting is held at your tavern to collect funds for the poor. Gain a +10 bonus to your next roll on the Business Results table (+15 if you paid for extra service).",
+        "businessRollModifier": 10,
+        "cost": null
+    },
+    "14": {
+        "description": "An experienced tavern manager offers their services. If you accept, pay a one-off signing fee of 50 gp and gain a +10 bonus to all future rolls on the Business Results table.",
+        "businessRollModifier": 10,
+        "cost": "50",
+        "onGoing": true
+    },
+    "15": {
+        "description": "A group of sailors, recently returned from a long and profitable voyage, spend all week carousing in your tavern. Gain a +15 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 15,
+        "cost": null
+    },
+    "16": {
+        "description": "One of your ale vats bursts. Pay 1d4 * 10 gp for repairs unless you're paying for preventative maintenance.",
+        "businessRollModifier": null,
+        "cost": "1d4 * 10"
+    },
+    "17": {
+        "description": "A careless druid casts a cloudburst over your tavern, revealing serious leaks. Pay 2d6 * 5 gp for repairs unless you're paying for preventative maintenance.",
+        "businessRollModifier": null,
+        "cost": "2d6 * 5"
+    },
+    "18": {
+        "description": "The annual half-orc beauty pageant is held at your tavern. Take a -10 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -10,
+        "cost": null
+    },
+    "19": {
+        "description": "A leprechaun shows up offering to help brew your ale in return for room and board. If you accept, gain a +10 bonus to all future rolls on the Business Results table until you make a loss, at which point the leprechaun storms off in a huff.",
+        "businessRollModifier": 10,
+        "cost": null,
+        "onGoing": true
+    },
+    "20": {
+        "description": "The local opera society chooses your tavern to host their next major production. If you accept, they pay you a 50 gp rental fee and you also gain a +10 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 10,
+        "cost": "-50"
+    },
+    "21": {
+        "description": "Food inspectors find evidence of poor quality produce being used in your establishment. Pay a 50 gp fine. Ignore this result if you're paying for extra service.",
+        "businessRollModifier": null,
+        "cost": "50"
+    },
+    "22": {
+        "description": "A pair of wizards fight a duel in the street and your tavern is struck by a stray lightning bolt. Pay 8d8 gp for repairs.",
+        "businessRollModifier": null,
+        "cost": "8d8"
+    },
+    "23": {
+        "description": "Two crews from rival merchant ships show up at your tavern and have a brawl. Pay 3d6 * 5 gp for repairs. Ignore this result if you're paying for extra security.",
+        "businessRollModifier": null,
+        "cost": "3d6 * 5"
+    },
+    "24": {
+        "description": "A party of cavaliers spend several days at your tavern, celebrating a recent victory. Gain a +20 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 20,
+        "cost": null
+    },
+    "25": {
+        "description": "A food fight breaks out between two rival groups of halfling adventurers. Pay 2d4 * 5 gp for repairs. Ignore this result if you're paying for extra security or extra service.",
+        "businessRollModifier": null,
+        "cost": "2d4 * 5"
+    },
+    "26": {
+        "description": "Unseasonable bad weather keeps patrons away. Take a -10 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -10,
+        "cost": null
+    },
+    "27": {
+        "description": "A band of traveling players asks permission to perform in return for tips. Gain a +20 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 20,
+        "cost": null
+    },
+    "28": {
+        "description": "The local newspaper includes a bad review of your establishment. Take a -15 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -15,
+        "cost": null
+    },
+    "29": {
+        "description": "You replace your chef with someone far more talented. Gain a +10 bonus to all future rolls on the Business Results table.",
+        "businessRollModifier": 10,
+        "cost": null,
+        "onGoing": true
+    },
+    "30": {
+        "description": "A freak hailstorm damages your roof. Pay 2d4 * 5 gp for repairs unless you have insurance.",
+        "businessRollModifier": null,
+        "cost": "2d4 * 5"
+    },
+    "31": {
+        "description": "A minor tremor causes some interior damage. Pay 2d6 * 5 gp for repairs unless you have insurance.",
+        "businessRollModifier": null,
+        "cost": "2d6 * 5"
+    },
+    "32": {
+        "description": "A local noble begins frequenting your tavern with a large entourage. Gain a +20 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 20,
+        "cost": null
+    },
+    "33": {
+        "description": "The local historical society holds its biannual dinner at your tavern. Gain a +5 bonus to your next roll on the Business Results table (+10 if you're paying for extra service).",
+        "businessRollModifier": 5,
+        "cost": null
+    },
+    "34": {
+        "description": "Your new barkeep is surly-tempered and upsets several regular patrons. Take a -5 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -5,
+        "cost": null
+    },
+    "35": {
+        "description": "The closure of a local brickworks means the newly unemployed workers spend more time and money at your tavern. Gain a +10 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 10,
+        "cost": null
+    },
+    "36": {
+        "description": "A stand-up comedy evening turns into a tavern brawl. Pay 2d4 * 5 gp for repairs. Ignore this result if you're paying for extra security.",
+        "businessRollModifier": null,
+        "cost": "2d4 * 5"
+    },
+    "37": {
+        "description": "A special meeting of the Magical Cultivation Society takes place at your tavern. Gain a +10 bonus to your next roll on the Business Results table (+20 if you're paying for extra service).",
+        "businessRollModifier": 10,
+        "cost": null
+    },
+    "38": {
+        "description": "A flash flood causes major damage to your taproom. Pay 2d6 * 5 gp for repairs unless you have insurance.",
+        "businessRollModifier": null,
+        "cost": "2d6 * 5"
+    },
+    "39": {
+        "description": "You find a new, guild-approved provider who works at a discount. Gain +10 bonus to all future rolls on the Business Results table.",
+        "businessRollModifier": 10,
+        "cost": null,
+        "onGoing": true
+    },
+    "40": {
+        "description": "Members of a local dragon cult start meeting at your tavern to play dice. Take a -10 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -10,
+        "cost": null
+    },
+    "41": {
+        "description": "Local criminals burst into your tavern after closing time, beat up the staff, and steal some of your profits. You lose 3d6 gp. Ignore this result if you're paying for extra security.",
+        "businessRollModifier": null,
+        "cost": null
+    },
+    "42": {
+        "description": "A buzzkill (see appendix C) begins haunting your tavern. Until it is banished, take a -10 penalty on all future rolls on the Business Results table.",
+        "businessRollModifier": -10,
+        "cost": null,
+        "onGoing": true
+    },
+    "43": {
+        "description": "The Esoteric Order of Necromancers holds a gala dinner at your tavern. Gain a +5 bonus to your next roll on the Business Results table (+10 if you paid for extra service).",
+        "businessRollModifier": 5,
+        "cost": null
+    },
+    "44": {
+        "description": "Several rat swarms take up residence in your basement and run freely throughout the tavern. Until you exterminate them, take a -15 penalty on all future rolls on the Business Results table.",
+        "businessRollModifier": -15,
+        "cost": null,
+        "onGoing": true
+    },
+    "45": {
+        "description": "A stubborn ogre begins frequenting the tavern. She doesn't pay for drinks and frightens off other patrons. Take a -5 penalty to all future rolls on the Business Results table until you resolve the problem.",
+        "businessRollModifier": -5,
+        "cost": null,
+        "onGoing": true
+    },
+    "46": {
+        "description": "Your brewer improves your ale recipe. Gain a +5 bonus to all future rolls on the Business Results table.",
+        "businessRollModifier": 5,
+        "cost": null,
+        "onGoing": true
+    },
+    "47": {
+        "description": "Your barkeep, your cook, and your waiter are involved in an ugly love triangle. Things come to a head one evening and a brawl erupts. Pay 2d4 * 5 gp for repairs. Ignore this result if you have extra security.",
+        "businessRollModifier": null,
+        "cost": "2d4 * 5"
+    },
+    "48": {
+        "description": "Half of your staff are struck down with a mysterious illness. Take a -15 penalty to your next roll on the Business Results table, unless you're paying for extra service.",
+        "businessRollModifier": -15,
+        "cost": null
+    },
+    "49": {
+        "description": "A bitter ex-employee sets fire to your premises one night after closing. Pay 2d8 * 10 gp for repairs unless you have insurance.",
+        "businessRollModifier": null,
+        "cost": "2d8 * 10"
+    },
+    "50": {
+        "description": "A feral orc eye of gruumsh begins patronizing your establishment, forcing other customers to leave due to the smell. Until you resolve the problem, take a -5 penalty to all future rolls on the Business Results table.",
+        "businessRollModifier": -5,
+        "cost": null,
+        "onGoing": true
+    },
+    "51": {
+        "description": "A pickpocket has chosen your tavern as their favored hunting grounds and people are staying away. Take a -10 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -10,
+        "cost": null
+    },
+    "52": {
+        "description": "The annual Magnificent Moustache competition is held on your premises, to great acclaim. Gain a +20 bonus to your next roll on the Business Results table (+30 if you paid for extra service).",
+        "businessRollModifier": 20,
+        "cost": null
+    },
+    "53": {
+        "description": "A plague of cockroaches infests your kitchen and patrons are unimpressed. Take a -10 penalty to your next roll on the Business Results table unless you're paying for preventative maintenance.",
+        "businessRollModifier": -10,
+        "cost": null
+    },
+    "54": {
+        "description": "Two paladins get into a fierce argument and fight a duel outside your tavern, drawing a great crowd. Gain a +10 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 10,
+        "cost": null
+    },
+    "55": {
+        "description": "A young woman claiming to be a prophet begins preaching at your tavern and draws a crowd. Gain a +10 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 10,
+        "cost": null
+    },
+    "56": {
+        "description": "Two rival candidates for a local municipal post show up at your tavern on the same evening and a brawl erupts. Pay 1d6 * 5 gp for repairs. Ignore this result if you have extra security.",
+        "businessRollModifier": null,
+        "cost": "1d6 * 5"
+    },
+    "57": {
+        "description": "An elf merchant begins selling iced cream outside your tavern during a heat wave. Gain a +10 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 10,
+        "cost": null
+    },
+    "58": {
+        "description": "Your oven cracks and needs to be replaced. Pay 20 + 1d12 gp unless you're paying for preventative maintenance.",
+        "businessRollModifier": null,
+        "cost": "20 + 1d12"
+    },
+    "59": {
+        "description": "A group of clerics claim that your tavern is infested by an evil presence, forcing everyone to leave while they conduct an exorcism. Take a -5 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -5,
+        "cost": null
+    },
+    "60": {
+        "description": "A lynch mob shows up at your tavern accusing one of the patrons, a mage, of unspeakable crimes. A brawl erupts with the mage holding his own against the mob. Pay 2d6 * 5 gp for repairs. Ignore this result if you have extra security.",
+        "businessRollModifier": null,
+        "cost": "2d6 * 5"
+    },
+    "61": {
+        "description": "One evening during a full moon, someone transforms into a wererat while using your privy. Three people are killed, and business is severely depressed for a time. Take a -15 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -15,
+        "cost": null
+    },
+    "62": {
+        "description": "A gnome magician begins frequenting the tavern and delights the crowd with her clever tricks. Gain a +10 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 10,
+        "cost": null
+    },
+    "63": {
+        "description": "One of your ale vats explodes. Pay 40 + 3d12 gp for repairs unless you're paying for preventative maintenance.",
+        "businessRollModifier": null,
+        "cost": "40 + 3d12"
+    },
+    "64": {
+        "description": "A leaking pipe floods the basement with raw sewage. Pay 10 + 1d12 gp for repairs unless you're paying for preventative maintenance.",
+        "businessRollModifier": null,
+        "cost": "10 + 1d12"
+    },
+    "65": {
+        "description": "One evening a patron has an allergic reaction to the mutton stew and dies. Business is depressed. Take a -15 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -15,
+        "cost": null
+    },
+    "66": {
+        "description": "Your barkeep interrupts three cultists performing a sacrifice in the back room. People flock to the tavern hoping to see a repeat performance. Gain a +10 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 10,
+        "cost": null
+    },
+    "67": {
+        "description": "A group of black cats inexplicably enters your tavern, circles the room seven times, and then leaves. The superstitious stay away for a time. Take a -10 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -10,
+        "cost": null
+    },
+    "68": {
+        "description": "You discover major leaks in your roof. Pay 20 + 2d12 gp for repairs unless you're paying for preventative maintenance.",
+        "businessRollModifier": null,
+        "cost": "20 + 2d12"
+    },
+    "69": {
+        "description": "A group of thugs from the local guild breaks into your tavern at midnight and tears the place apart, accruing a repair bill of 20 + 5d10 gp. A few days later the Guildmaster admits it was a mistake, but no apology or compensation is forthcoming.",
+        "businessRollModifier": null,
+        "cost": null
+    },
+    "70": {
+        "description": "A famous novelist begins writing her latest epic in your tavern. Her hangers-on are big drinkers. Gain a +20 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 20,
+        "cost": null
+    },
+    "71": {
+        "description": "A notice begins circulating in the city, calling upon people to boycott your tavern due to your unpatriotic behavior. Take a -10 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -10,
+        "cost": null
+    },
+    "72": {
+        "description": "A large, talking toad takes up residence in an alley next to your tavern, claiming to be a beautiful princess under a curse. People flock to see this fascinating attraction. Gain a +20 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 20,
+        "cost": null
+    },
+    "73": {
+        "description": "Your tavern is selected as a polling booth in the upcoming municipal election. People vote and stay to drink. Gain a +10 bonus to your next roll on the Business Results table (+15 if you paid for extra service).",
+        "businessRollModifier": 10,
+        "cost": null
+    },
+    "74": {
+        "description": "A press gang enters your tavern and kidnaps several patrons. Business is slow for a few days afterward. Take a -15 penalty to your next roll on the Business Results table. Ignore this result if you have extra security.",
+        "businessRollModifier": -15,
+        "cost": null
+    },
+    "75": {
+        "description": "A firework display in the street goes wrong and your tavern catches fire. Pay 50 + 4d12 gp for repairs unless you have insurance.",
+        "businessRollModifier": null,
+        "cost": "50 + 4d12"
+    },
+    "76": {
+        "description": "A local gladiator frequents your establishment. A brawl breaks out one evening when someone sits in her favorite chair. Pay 3d4 * 5 gp for repairs unless you have extra security.",
+        "businessRollModifier": null,
+        "cost": "3d4 * 5"
+    },
+    "77": {
+        "description": "A rival tavernkeeper hires a halfling spy to frequent your tavern and make a nuisance of himself. He upsets patrons, 'accidentally' breaks things, sneakily trips up the serving staff, and so on. Take a -5 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -5,
+        "cost": null
+    },
+    "78": {
+        "description": "An infant otyugh somehow makes its way into one of your privies. Pay 10 + 1d12 gp to have it removed.",
+        "businessRollModifier": null,
+        "cost": "10 + 1d12"
+    },
+    "79": {
+        "description": "An adventuring party shows up at your tavern, buying drinks for everyone and regaling them with tales of their exploits. Gain a +20 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 20,
+        "cost": null
+    },
+    "80": {
+        "description": "A merchant quietly approaches you and offers to sell you cheap, smuggled liquor. +15 to all future business results rolls if you accept the offer. At the DM's discretion, this may cause trouble with the local guilds.",
+        "businessRollModifier": null,
+        "cost": null
+    },
+    "81": {
+        "description": "A company of disoriented dwarf miners accidentally digs a tunnel into your tavern's basement. Pay 40 + 3d12 gp for repairs.",
+        "businessRollModifier": null,
+        "cost": "40 + 3d12"
+    },
+    "82": {
+        "description": "Your barkeep accidentally offends a local witch, who puts a curse on your ale. Take a -5 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -5,
+        "cost": null
+    },
+    "83": {
+        "description": "Pixies begin inexplicably appearing in your tavern, flying around, playing tricks on the patrons, and causing mayhem. Take a -10 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -10,
+        "cost": null
+    },
+    "84": {
+        "description": "A new vintage of wine proves very popular with the locals. Gain a +20 bonus to your next roll on the Business Results table. ",
+        "businessRollModifier": 20,
+        "cost": null
+    },
+    "85": {
+        "description": "A powerful wizard offers 5d6 * 100 gp for your tavern. She's very insistent that you sell, and rumors about that there's something valuable buried in your basement.",
+        "businessRollModifier": null,
+        "cost": null
+    },
+    "86": {
+        "description": "A group of barbarians, freshly arrived in the city, take a liking to your tavern. They pitch a tent in the common room and bring their animals inside, while drinking all the ale and refusing to pay. Take a -10 penalty to your next roll on the Business Results table. Ignore this result if you have extra security.",
+        "businessRollModifier": -10,
+        "cost": null
+    },
+    "87": {
+        "description": "A pie seller sets up a cart outside your tavern, attracting patrons. Gain +10 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 10,
+        "cost": null
+    },
+    "88": {
+        "description": "Heavy fog keeps patrons away. Take a -5 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -5,
+        "cost": null
+    },
+    "89": {
+        "description": "A sorcerer from a far-off land gets very drunk and accidentally unleashes wild magic in your taproom. Pay 10 + 2d12 gp for repairs.",
+        "businessRollModifier": null,
+        "cost": "10 + 2d12"
+    },
+    "90": {
+        "description": "Two young nobles are racing chariots down the street when one of them crashes into your tavern. Pay 60 + 4d12 gp for repairs unless you have insurance.",
+        "businessRollModifier": null,
+        "cost": "60 + 4d12"
+    },
+    "91": {
+        "description": "The wake for a popular local cleric is held in your common room. Gain a +10 bonus to your next roll on the Business Results table (+15 if you paid for extra service).",
+        "businessRollModifier": 10,
+        "cost": null
+    },
+    "92": {
+        "description": "A coronach (see appendix C) uses your tavern as a base to learn all the lost songs of your region. Until the undead horror moves on, take a -30 penalty to all future rolls on the Business Results table.",
+        "businessRollModifier": -30,
+        "cost": null,
+        "onGoing": true
+    },
+    "93": {
+        "description": "A foreign diplomat dies while drinking in your tavern, possibly a victim of poisoning. Authorities shut your tavern down for several days while they investigate. Take a -20 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -20,
+        "cost": null
+    },
+    "94": {
+        "description": "A talking ass enters your tavern and asks for an ale poured into a bowl. He explains he's a foreign lord who's been placed under a curse. Business surges as people come to the inn to hear his tale. Gain a +20 bonus to your next roll on the Business Results table (+30 if you paid for extra service).",
+        "businessRollModifier": 20,
+        "cost": null
+    },
+    "95": {
+        "description": "Two rival monastic schools turn up at the same time one evening and a brawl erupts. Pay 3d6 * 5 gp for repairs. Ignore this result if you have extra security.",
+        "businessRollModifier": null,
+        "cost": "3d6 * 5"
+    },
+    "96": {
+        "description": "A pair of bards have a musical duel, delighting the crowd and attracting patrons. Gain a +10 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 10,
+        "cost": null
+    },
+    "97": {
+        "description": "A gnome artificer visits your tavern with a remarkable clockwork automaton in tow. The machine starts behaving erratically and eventually goes berserk, damaging the common room. Pay 20 + 1d12 gp for repairs. Ignore this result if you're paying for extra security.",
+        "businessRollModifier": null,
+        "cost": "20 + 1d12"
+    },
+    "98": {
+        "description": "Your barkeep gives a thirsty but destitute paladin a free drink one evening. The paladin blesses the ale vat by way of thanks, and the next batch of ale is the best anyone's ever tasted. Gain a +20 bonus to your next roll on the Business Results table.",
+        "businessRollModifier": 20,
+        "cost": null
+    },
+    "99": {
+        "description": "Strange runes begin appearing on the furniture and walls of the common room. Patrons are scared and stay away. Take a -5 penalty to your next roll on the Business Results table.",
+        "businessRollModifier": -5,
+        "cost": null
+    }
+}
