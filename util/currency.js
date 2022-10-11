@@ -5,81 +5,88 @@
  * Example usage:
  * new Currency().copper(60).fromMonthly().toWeekly().value();
  */
-module.exports = function() {
-    this.unit = 0;
+module.exports = class Currency {
+    constructor(val = 0) {
+        this.unit = val;
+    }
 
-    this.copper = function(amount) {
+    copper(amount) {
         this.unit = amount;
         return this;
     }
-    this.silver = function(amount) {
+    silver(amount) {
         this.unit = amount * 10;
         return this;
     }
-    this.gold = function(amount) {
+    gold(amount) {
         this.unit = amount * 100;
         return this;
     }
-    this.platinum = function(amount) {
+    platinum(amount) {
         this.unit = amount * 1000;
         return this;
     }
 
-    this.fromDaily = function() {
+    fromDaily() {
         return this;
     }
-    this.fromWeekly = function() {
+    fromWeekly() {
         this.unit /= 10; // 10 days in a week.
         return this;
     }
-    this.fromMonthly = function() {
+    fromMonthly() {
         this.unit /= 30; // 30 days in a month
         return this;
     }
 
-    this.toDaily = function() {
+    toDaily() {
         return this;
     }
-    this.toWeekly = function() {
+    toWeekly() {
         this.unit *= 10;
         return this;
     }
-    this.toMonthly = function() {
+    toMonthly() {
         this.unit *= 30;
         return this;
     }
 
-    this.toCopper = function() {
+    toCopper() {
         return this;
     }
-    this.toSilver = function() {
+    toSilver() {
         this.unit /= 10;
         return this;
     }
-    this.toGold = function() {
+    toGold() {
         this.unit /= 100;
         return this;
     }
-    this.toPlatinum = function() {
+    toPlatinum() {
         this.unit /= 1000;
         return this;
     }
 
-    this.value = function() {
+    value() {
         return this.unit;
     }
 
-    this.mult = function(val) {
+    add(val) {
+        this.unit += val;
+        return this;
+    }
+
+    mult(val) {
         this.unit *= val;
         return this;
     }
 
-    this.div = function(val) {
+    div(val) {
         this.unit /= val;
         return this;
     }
 
-    this.toString = function() {
+    toString() {
         let currentCopper = Math.abs(this.unit);
         // const platinum = Math.floor(currentCopper / 1000); currentCopper -= platinum * 1000;
         const gold = Math.floor(currentCopper / 100); currentCopper -= gold * 100;
