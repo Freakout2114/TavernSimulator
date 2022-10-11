@@ -31,7 +31,6 @@ module.exports = class Tavern {
         this.calculateValuation();
 
         const expectedCost = this.getExpectedCostPerTenday();
-        const percentage = Math.random();
         const profitPercentage = (percentage * 38 - 8) / 100.0; // Range from -8% to +30%
         const tavernPerformance = this.getTavernPerformance(percentage)
 
