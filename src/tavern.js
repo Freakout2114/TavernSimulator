@@ -1,12 +1,14 @@
 const fs = require('fs');
 const path = require('node:path');
 const Currency = require('../util/currency.js');
-module.exports = function() {
 
-    this.valuation = 0;
-    this.employeeCount = 8;
+module.exports = class Tavern {
+    constructor() {
+        this.valuation = this.calculateValuation();
+        this.employeeCount = 8;
+    }
 
-    this.getOverview = function(revenueObj) {
+    getOverview(revenueObj, tavernEvent) {
         const {
             baseProfit,
             employeeWages,
@@ -25,7 +27,7 @@ module.exports = function() {
             `Tavern Quality: ${this.getQuality()} (Valuation: ${this.valuation})`;
     }
 
-    this.calculateRevenue = function() {
+    calculateRevenue(percentage) {
         this.calculateValuation();
 
         const expectedCost = this.getExpectedCostPerTenday();
@@ -61,7 +63,7 @@ module.exports = function() {
         };
     }
 
-    this.calculateValuation = function() {
+    calculateValuation() {
         const purchasedUpgrades = this.getPurchasedUpgrades();
         let valuation = 0;
 
@@ -72,7 +74,7 @@ module.exports = function() {
         return valuation;
     }
 
-    this.calculateUpgradeRevenue = function() {
+    calculateUpgradeRevenue() {
         const purchasedUpgrades = this.getPurchasedUpgrades();
         let revenue = 0;
 
@@ -84,7 +86,7 @@ module.exports = function() {
         return revenue;
     }
 
-    this.getUpgrades = function() {
+    getUpgrades() {
         const upgradesPath = path.join(__dirname, '..', 'upgrades.json');
         const rawdata = fs.readFileSync(upgradesPath);
         const upgrades = JSON.parse(rawdata);
@@ -92,12 +94,12 @@ module.exports = function() {
         return Object.values(upgrades);
     }
 
-    this.getPurchasedUpgrades = function() {
+    getPurchasedUpgrades() {
         const upgrades = this.getUpgrades();
         return upgrades.filter(upgrade => upgrade.purchased !== null);
     }
 
-    this.getQuality = function() {
+    getQuality() {
         const valuation = this.valuation;
         if (valuation <= 5) {
             return 'Squalid';
@@ -114,7 +116,7 @@ module.exports = function() {
         }
     }
 
-    this.getTavernPerformance = function(percentage) {
+    getTavernPerformance(percentage) {
         const tavernPerformance = [
             'Ghost Town',
             'Empty',
@@ -147,7 +149,7 @@ module.exports = function() {
      * 31-44        Upscale             125 gp
      * 45+          Aristocratic        160 gp
      */
-    this.getExpectedCostPerTenday = function() {
+    getExpectedCostPerTenday() {
         const valuation = this.valuation;
         if (valuation <= 5) {
             return new Currency().gold(45);
