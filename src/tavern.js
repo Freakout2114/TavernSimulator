@@ -129,6 +129,8 @@ module.exports = function() {
             'Chaotic'
         ];
 
+        percentage = Math.min(0.0, Math.max(1.0, percentage));
+
         return tavernPerformance[Math.floor(tavernPerformance.length * percentage)];
     }
 
