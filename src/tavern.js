@@ -8,6 +8,7 @@ module.exports = class Tavern {
     constructor() {
         this.valuation = this.calculateValuation();
         this.employeeCount = 8;
+        this.balance = new Currency();
     }
 
     simulate() {
@@ -24,6 +25,9 @@ module.exports = class Tavern {
         }
 
         const revenueObj = this.calculateRevenue(percentage, tavernEvent);
+
+        // Update balance
+        this.balance.add(revenueObj.profit.value());
 
         const overview = this.getOverview(revenueObj, tavernEvent);
 
@@ -62,6 +66,8 @@ module.exports = class Tavern {
         } = revenueObj;
 
         const output = [];
+        output.push(`**Balance**: ${this.balance.toString()}`);
+        output.push(``);
         output.push(`**Revenue**: ${profit.toString()}`);
         output.push(``);
         output.push(`**Breakdown**`);
