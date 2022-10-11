@@ -19,11 +19,11 @@ module.exports = class Tavern {
 
         if (tavernEvent) {
             if (tavernEvent.businessRollModifier) {
-                percentage += tavernEvent.businessRollModifier / 100;
+                percentage += tavernEvent.businessRollModifier / 100.0;
             }
         }
 
-        const revenueObj = this.calculateRevenue(percentage);
+        const revenueObj = this.calculateRevenue(percentage, tavernEvent);
 
         const overview = this.getOverview(revenueObj, tavernEvent);
 
@@ -66,11 +66,11 @@ module.exports = class Tavern {
         output.push(``);
         output.push(`**Breakdown**`);
         output.push(`Base Profit: ${baseProfit.toString()} | ${tavernPerformance} week`);
-        output.push(`Employee Wages: -${employeeWages.toString()}`);
         output.push(`Upgrade Bonuses: ${upgrades.toString()}`);
+        output.push(`Employee Wages: -${employeeWages.toString()}`);
 
         if (tavernEvent.cost) {
-            output.push(`Tavern event: ${tavernEvent.cost.toString()}`);
+            output.push(`Tavern event: -${tavernEvent.cost.toString()}`);
         }
 
         output.push(``);
@@ -84,7 +84,7 @@ module.exports = class Tavern {
         return output.join('\n');
     }
 
-    calculateRevenue(percentage) {
+    calculateRevenue(percentage, tavernEvent) {
         this.calculateValuation();
 
         const expectedCost = this.getExpectedCostPerTenday();
@@ -107,8 +107,9 @@ module.exports = class Tavern {
         const baseProfit = expectedCost.mult(profitPercentage);
         const employeeWages = employeeWage.mult(employeeCount);
         const upgrades = new Currency().gold(this.calculateUpgradeRevenue());
+        const tavernEventCost = (tavernEvent.cost) ? tavernEvent.cost : new Currency();
 
-        const profit = new Currency().copper(baseProfit.value() - employeeWages.value() + upgrades.value());
+        const profit = new Currency().copper(baseProfit.value() - employeeWages.value() + upgrades.value() - tavernEventCost.value());
 
         return {
             baseProfit,
