@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('node:path');
 const Currency = require('../util/currency.js');
+const jsonLoader = require('../util/jsonLoader.js');
+const TavernEvent = require('../model/tavernEvent.js');
 
 module.exports = class Tavern {
     constructor() {
@@ -8,6 +10,48 @@ module.exports = class Tavern {
         this.employeeCount = 8;
     }
 
+    simulate() {
+        // Generate tavern performance
+        let percentage = Math.random();
+
+        // Get the tavern event
+        const tavernEvent = this.getTavernEvent();
+
+        if (tavernEvent) {
+            if (tavernEvent.businessRollModifier) {
+                percentage += tavernEvent.businessRollModifier / 100;
+            }
+        }
+
+        const revenueObj = this.calculateRevenue(percentage);
+
+        const overview = this.getOverview(revenueObj, tavernEvent);
+
+        console.log("overview: \n", overview);
+        return overview;
+    }
+
+    /**
+     * Output layout?
+     *
+     * **Net Value**: $$$
+     *
+     * **Revenue**: $$$
+     *
+     * **Breakdown**:
+     * Base Profit: $$$
+     * Employee Wages: $$$
+     * Upgrade Bonuses: $$$
+     * Tavern event: $$$
+     *
+     * Tavern Quality: Poor (Valuation: 10)
+     *
+     * **Tavern Event**:
+     * Bla bla bla bla
+     *
+     * **Ongoing events**:
+     * Bla bla bla
+     */
     getOverview(revenueObj, tavernEvent) {
         const {
             baseProfit,
@@ -17,14 +61,27 @@ module.exports = class Tavern {
             tavernPerformance
         } = revenueObj;
 
-        return `**Revenue**: ${profit.toString()}\n` +
-            `\n` +
-            `**Breakdown**\n` +
-            `Base Profit: ${baseProfit.toString()} | ${tavernPerformance} week\n` +
-            `Employee Wages: -${employeeWages.toString()}\n` +
-            `Upgrade Bonuses: ${upgrades.toString()}\n` +
-            `\n` +
-            `Tavern Quality: ${this.getQuality()} (Valuation: ${this.valuation})`;
+        const output = [];
+        output.push(`**Revenue**: ${profit.toString()}`);
+        output.push(``);
+        output.push(`**Breakdown**`);
+        output.push(`Base Profit: ${baseProfit.toString()} | ${tavernPerformance} week`);
+        output.push(`Employee Wages: -${employeeWages.toString()}`);
+        output.push(`Upgrade Bonuses: ${upgrades.toString()}`);
+
+        if (tavernEvent.cost) {
+            output.push(`Tavern event: ${tavernEvent.cost.toString()}`);
+        }
+
+        output.push(``);
+        output.push(`Tavern Quality: ${this.getQuality()} (Valuation: ${this.valuation})`);
+
+        if (tavernEvent) {
+            output.push(`\n**Tavern Event**`);
+            output.push(tavernEvent.description);
+        }
+
+        return output.join('\n');
     }
 
     calculateRevenue(percentage) {
@@ -163,5 +220,19 @@ module.exports = class Tavern {
         } else {
             return new Currency().gold(160);
         }
+    }
+
+    getTavernEvent() {
+        const threshold = 0.3;
+
+        // if (Math.random() > threshold) {
+        //     return null;
+        // }
+        // const index = Math.floor(Math.random() * 100);
+        const index = 3;
+        const events = Object.values(jsonLoader('../events.json'));
+        const event = events[index];
+
+        return new TavernEvent(event);
     }
 };
