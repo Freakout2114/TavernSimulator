@@ -80,20 +80,25 @@ module.exports = function() {
     }
 
     this.toString = function() {
-        let currentCopper = this.unit;
-        const platinum = Math.floor(currentCopper / 1000); currentCopper -= platinum * 1000;
+        let currentCopper = Math.abs(this.unit);
+        // const platinum = Math.floor(currentCopper / 1000); currentCopper -= platinum * 1000;
         const gold = Math.floor(currentCopper / 100); currentCopper -= gold * 100;
         const silver = Math.floor(currentCopper / 10); currentCopper -= silver * 10;
         const copper = Math.floor(currentCopper);
 
         let output = [];
-        if (platinum > 0) output.push(platinum+"pp");
+        // if (platinum > 0) output.push(platinum+"pp");
         if (gold > 0) output.push(gold+"gp");
         if (silver > 0) output.push(silver+"sp");
         if (copper > 0) output.push(copper+"cp");
 
         if (output.length === 0) output.push("0cp");
 
-        return output.join(' ');
+        let result = output.join(' ');
+        if (this.unit < 0) {
+            result = '-' + result;
+        }
+
+        return result;
     }
 }
