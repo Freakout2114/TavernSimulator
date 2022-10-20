@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
+const tavern = require('./src/tavern');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -75,4 +76,6 @@ const seedInput = new Date().toISOString()
 const seed = cyrb128(seedInput);
 
 // Set the random function to be seeded
-Math.random = mulberry32(seed[0]);
+// Math.random = mulberry32(seed[0]);
+
+new tavern().simulate();

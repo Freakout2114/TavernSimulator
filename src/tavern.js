@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('node:path');
 const Currency = require('../util/currency.js');
+const Dice = require('../util/dice.js');
 const jsonLoader = require('../util/jsonLoader.js');
 const TavernEvent = require('../model/tavernEvent.js');
 
@@ -62,7 +63,8 @@ module.exports = class Tavern {
             employeeWages,
             upgrades,
             profit,
-            tavernPerformance
+            tavernPerformance,
+            businessResult
         } = revenueObj;
 
         const output = [];
@@ -75,12 +77,16 @@ module.exports = class Tavern {
         output.push(`Upgrade Bonuses: ${upgrades.toString()}`);
         output.push(`Employee Wages: -${employeeWages.toString()}`);
 
+        if (tavernEvent) {
+            output.push(`Business Result: ${businessResult.toString()}`);
+        }
+
         if (tavernEvent.cost) {
             output.push(`Tavern event: -${tavernEvent.cost.toString()}`);
         }
 
         output.push(``);
-        output.push(`Tavern Quality: ${this.getQuality()} (Valuation: ${this.valuation})`);
+        output.push(`Tavern Quality: ${this.getQuality().name} (Valuation: ${this.valuation})`);
 
         if (tavernEvent) {
             output.push(`\n**Tavern Event**`);
@@ -91,6 +97,7 @@ module.exports = class Tavern {
     }
 
     calculateRevenue(percentage, tavernEvent) {
+        console.log("Percentage Rolled: ", percentage);
         this.calculateValuation();
 
         const expectedCost = this.getExpectedCostPerTenday();
@@ -110,19 +117,39 @@ module.exports = class Tavern {
 
         // If one or more characters spend a full Downtime managing tavern operations, they may add 1d4 to the profit percentage roll.
 
+        // Tavern event
+        let businessResult = 0;
+        if (tavernEvent) {
+            console.log("tavernEvent.businessRollModifier: ", tavernEvent.businessRollModifier);
+            const businessRollModifier = (tavernEvent.businessRollModifier || 0) / 100.0;
+            const getBusinessResult = this.getBusinessResult(percentage + businessRollModifier);
+            console.log("getBusinessResult: ", getBusinessResult);
+            businessResult = new Currency().gold(Dice.parse(getBusinessResult));
+            console.log("businessResult: ", businessResult.toString());
+        }
+
+        console.log("expectedCost: ", expectedCost.toString());
+
         const baseProfit = expectedCost.mult(profitPercentage);
         const employeeWages = employeeWage.mult(employeeCount);
         const upgrades = new Currency().gold(this.calculateUpgradeRevenue());
         const tavernEventCost = (tavernEvent.cost) ? tavernEvent.cost : new Currency();
 
-        const profit = new Currency().copper(baseProfit.value() - employeeWages.value() + upgrades.value() - tavernEventCost.value());
+        const profit = new Currency().copper(
+            baseProfit.value()
+            + upgrades.value()
+            - employeeWages.value()
+            - tavernEventCost.value()
+            + businessResult.value()
+        );
 
         return {
             baseProfit,
             employeeWages,
             upgrades,
             profit,
-            tavernPerformance
+            tavernPerformance,
+            businessResult
         };
     }
 
@@ -164,19 +191,12 @@ module.exports = class Tavern {
 
     getQuality() {
         const valuation = this.valuation;
-        if (valuation <= 5) {
-            return 'Squalid';
-        } else if (valuation <= 12) {
-            return 'Poor';
-        } else if (valuation <= 19) {
-            return 'Modest';
-        } else if (valuation <= 49) {
-            return 'Confortable';
-        } else if (valuation <= 69) {
-            return 'Wealthy';
-        } else {
-            return 'Aristocratic';
-        }
+        if (valuation <= 5) { return { index: 0, name: 'Squalid' }; }
+        else if (valuation <= 12) { return { index: 1, name: 'Poor' }; }
+        else if (valuation <= 19) { return { index: 2, name: 'Modest' }; }
+        else if (valuation <= 49) { return { index: 3, name: 'Confortable' }; }
+        else if (valuation <= 69) { return { index: 4, name: 'Wealthy' }; }
+        else { return { index: 5, name: 'Aristocratic' }; }
     }
 
     getTavernPerformance(percentage) {
@@ -194,7 +214,7 @@ module.exports = class Tavern {
             'Chaotic'
         ];
 
-        percentage = Math.min(0.0, Math.max(1.0, percentage));
+        percentage = Math.max(0.0, Math.min(1.0, percentage));
 
         return tavernPerformance[Math.floor(tavernPerformance.length * percentage)];
     }
@@ -229,14 +249,106 @@ module.exports = class Tavern {
         }
     }
 
+    getBusinessResult(percentage) {
+        const d100 = percentage * 100;
+        const tavernQualityIndex = this.getQuality().index;
+        let index = 0;
+
+        console.log("d100: ", d100);
+
+        if (d100 > 20) index++;
+        if (d100 > 30) index++;
+        if (d100 > 40) index++;
+        if (d100 > 60) index++;
+        if (d100 > 80) index++;
+        if (d100 > 90) index++;
+        if (d100 > 110) index++;
+        if (d100 > 130) index++;
+
+        return [
+            [ // "01-20"
+                "0 - 3d10 * 3",
+                "0 - 3d10 * 4",
+                "0 - 3d10 * 5",
+                "0 - 3d10 * 6",
+                "0 - 3d10 * 8",
+                "0 - 3d10 * 10"
+            ],
+            [ // "21-30"
+                "0 - 2d8 * 3",
+                "0 - 2d8 * 4",
+                "0 - 2d8 * 5",
+                "0 - 2d8 * 6",
+                "0 - 2d8 * 8",
+                "0 - 2d8 * 10"
+            ],
+            [ // "31-40"
+                "0 - 1d6 * 3",
+                "0 - 1d6 * 4",
+                "0 - 1d6 * 5",
+                "0 - 1d6 * 6",
+                "0 - 1d6 * 8",
+                "0 - 1d6 * 10"
+            ],
+            [ // "41-60"
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+            ],
+            [ // "61-80"
+                "1d6",
+                "1d6 * 3",
+                "1d6 * 5",
+                "1d6 * 7",
+                "1d6 * 9",
+                "1d6 * 12"
+            ],
+            [ // "81-90"
+                "2d8",
+                "2d8 * 3",
+                "2d8 * 5",
+                "2d8 * 7",
+                "2d8 * 9",
+                "2d8 * 12"
+            ],
+            [ // "91-110"
+                "3d10",
+                "3d10 * 3",
+                "3d10 * 5",
+                "3d10 * 7",
+                "3d10 * 9",
+                "3d10 * 12"
+            ],
+            [ // "111-130"
+                "5d10",
+                "5d10 * 3",
+                "5d10 * 5",
+                "5d10 * 7",
+                "5d10 * 9",
+                "5d10 * 12"
+            ],
+            [ // "131+"
+                "7d10",
+                "7d10 * 3",
+                "7d10 * 5",
+                "7d10 * 7",
+                "7d10 * 9",
+                "7d10 * 12"
+            ]
+        ][index][tavernQualityIndex];
+    }
+
     getTavernEvent() {
         const threshold = 0.3;
 
         // if (Math.random() > threshold) {
         //     return null;
         // }
-        // const index = Math.floor(Math.random() * 100);
-        const index = 3;
+        const index = Math.floor(Math.random() * 100);
+        // const index = 3;
         const events = Object.values(jsonLoader('../events.json'));
         const event = events[index];
 

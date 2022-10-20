@@ -1,0 +1,29 @@
+--- Things to do first ---
+
+Calculate the bills for the tavern
+
+-- Things to do later ---
+
+Add in the rival business
+
+Tavern events https://anyflip.com/brrnw/zfda/basic
+
+Random things that need fixing
+    - Leaking roof
+    - Hole in the wall
+    - Broken
+
+--- DONE ---
+
+Calculate revenue for the tavern
+
+List available upgrades
+
+Resources
+https://www.gmbinder.com/share/-M7rUWFvpMBZVpld6M0e
+http://epicsavingthrow.com/dd5e-downtime-activities/
+https://anydice.com/program/1785d
+
+https://www.reddit.com/r/DnDBehindTheScreen/comments/3o2ydl/5e_commoner_life_and_economy/
+https://anyflip.com/brrnw/zfda
+https://github.com/TheGiddyLimit/homebrew/blob/master/collection/JasonNewby%3B%20Durnan%27s%20Guide%20to%20Tavernkeeping.json
